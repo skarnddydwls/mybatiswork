@@ -12,7 +12,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet("/insert.me")
-public class memberInsertServlet extends HttpServlet {
+public class MemberInsertServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -27,26 +27,13 @@ public class memberInsertServlet extends HttpServlet {
 		m.setAddress(request.getParameter("address"));
 		
 		int result = new MemberServiceImpl().insertMember(m);
+		
+		if(result > 0) {
+			response.sendRedirect(request.getContextPath());
+		} else {
+			request.setAttribute("errorMsg", "회원가입 실패");
+			request.getRequestDispatcher("WEB-INF/views/common/errorPage.jsp")
+				   .forward(request, response);
+		}
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

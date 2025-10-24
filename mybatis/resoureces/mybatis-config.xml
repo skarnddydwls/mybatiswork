@@ -10,6 +10,11 @@
 	</settings>
 	
 	<!-- typeAlias: servlet, bean클래스들의 풀클래스 이름을 단순하게 하기위해 별칭을 등록해주는 영역 -->
+	<typeAliases>
+		<typeAlias type="com.mybatis.member.dto.Member" alias="Member"/>
+		<typeAlias type="com.mybatis.board.dto.Board" alias="Board"/>
+		<typeAlias type="com.mybatis.board.dto.Reply" alias="Reply"/>
+  	</typeAliases>
 	<!-- mybatis에서 연동할 DB정보들을 등록하는 영역 -->
   <environments default="development">
     <environment id="development">
@@ -35,5 +40,6 @@
   <!-- mapper: 실행할 sql문들을 기록해둔 mapper파일들을 등록하는 영역 -->
   <mappers>
     <mapper resource="/mappers/member-mapper.xml"/>
+    <mapper resource="/mappers/board-mapper.xml"/>
   </mappers>
 </configuration>

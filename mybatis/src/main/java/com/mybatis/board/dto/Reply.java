@@ -3,18 +3,16 @@ package com.mybatis.board.dto;
 public class Reply {
 	private int no;
 	private String content;
-	private int bno;
+	private int refBno;
 	private String writer;
 	private String createDate;
 	private String status;
 	
-	
-	public Reply() {
-	}
-	public Reply(int no, String content, int bno, String writer, String createDate, String status) {
+	public Reply() {}
+	public Reply(int no, String content, int refBno, String writer, String createDate, String status) {
 		this.no = no;
 		this.content = content;
-		this.bno = bno;
+		this.refBno = refBno;
 		this.writer = writer;
 		this.createDate = createDate;
 		this.status = status;
@@ -31,11 +29,11 @@ public class Reply {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public int getBno() {
-		return bno;
+	public int getRefBno() {
+		return refBno;
 	}
-	public void setBno(int bno) {
-		this.bno = bno;
+	public void setRefBno(int refBno) {
+		this.refBno = refBno;
 	}
 	public String getWriter() {
 		return writer;
@@ -56,9 +54,6 @@ public class Reply {
 		this.status = status;
 	}
 	
-	@Override
-	public String toString() {
-		return "Reply [no=" + no + ", content=" + content + ", bno=" + bno + ", writer=" + writer + ", createDate="
-				+ createDate + ", status=" + status + "]";
-	}
+	
+	
 }
