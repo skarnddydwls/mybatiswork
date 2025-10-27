@@ -33,15 +33,16 @@
 			<table>
 				<tr>
 					<td>제목</td>
-					<td colspan="3"><input name="name"></td>
+					<td colspan="3" align="left"><input name="title"></td>
 				</tr>
 				<tr>
 					<td>아이디</td>
-					<td colspan="3">${loginUser.userId}</td>
+					<td colspan="3" align="left">${userLogin.userName}</td>
+					<input type="hidden" value="${userLogin.userName}" name="userId" />
 				</tr>
 				<tr>
 					<td>내용</td>
-					<td colspan="3">
+					<td colspan="3" align="left">
 						<textarea rows="3" cols="45" height="500px" name="centent" id="content"></textarea>
 					</td>
 				</tr>

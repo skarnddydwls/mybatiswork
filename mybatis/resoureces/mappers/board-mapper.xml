@@ -96,6 +96,10 @@
 	<insert id="insertReply">
   		insert into reply values(seq_rno.nextval, #{content}, #{refBno}, #{writer}, default, default)
  	</insert>
+ 	
+ 	<insert id="insertBoard">
+ 		insert into board values(seq_bno.nextval, #{title}, #{content}, #{userId}, default, default, default)
+ 	</insert>
 </mapper>
 
 

@@ -65,9 +65,11 @@ public class BoardRepository {
 	}
 
 	public int insertRePly(SqlSession sqlSession, Reply r) {
-		
-		
 		return sqlSession.insert("boardMapper.insertReply", r);
+	}
+
+	public int insertBoard(SqlSession sqlSession, Board b) {
+		return sqlSession.insert("boardMapper.insertBoard", b);
 	}
 
 }

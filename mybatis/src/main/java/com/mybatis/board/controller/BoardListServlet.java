@@ -19,8 +19,8 @@ public class BoardListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		int nowPage = Integer.parseInt(request.getParameter("nowPage"));
+		
 		int totalRecord = new BoardServiceImpl().totalRecord();
 		
 		PageInfo pi = Pagination.getPageInfo(totalRecord, nowPage, 5, 2);

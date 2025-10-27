@@ -24,4 +24,7 @@ public interface BoardService {
 	
 	// 댓글 등록
 	int insertReply(Reply r);
+	
+	// 게시글 등록
+	int insertBoard(Board b);
 }

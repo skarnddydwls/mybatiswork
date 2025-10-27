@@ -95,6 +95,17 @@ public class BoardServiceImpl implements BoardService {
 		sqlSession.close();
 		return result;
 	}
+	
+	public int insertBoard(Board b) {
+		SqlSession sqlSession = getSqlSession();
+		int result = bDao.insertBoard(sqlSession, b);
+		
+		if(result >0) {
+			sqlSession.commit();
+		}
+		sqlSession.close();
+		return result;
+	}
 }
 
 

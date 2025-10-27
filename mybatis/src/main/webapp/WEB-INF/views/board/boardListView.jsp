@@ -47,7 +47,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach var="b" items="${list }" varStatus="s">
+					<c:forEach var="b" items="${list}" varStatus="s">
 						<tr>
 							<td>${pi.totalRecord - (pi.nowPage - 1) * pi.numPerPage - s.index }</td>
 							<td><a href="detail.bo?bno=${b.no}">${b.title }</a></td>
@@ -61,10 +61,9 @@
 		</div>
 		<br>
 		<div align="right">
-			<form action="boardInsert.bo">
+			<form action="insertView.bo">
 				<input type="submit" value="글쓰기" />
 				<input type="hidden" name="userId" value="${b.userId}">
-				<input type="hidden" name="userPwd" value="${b.userPwd}">
 			</form>	
 		</div>
 		<div id="paging-area" align="center">
